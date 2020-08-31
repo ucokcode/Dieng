@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    fun handleClick(size: Int) {
+    private fun handleClick(size: Int) {
         val transition = ChangeBounds()
         transition.duration = 120
         TransitionManager.beginDelayedTransition(frame1, transition)
@@ -47,18 +47,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             layoutParams.height = size
         }
         mwisata.apply {
-            visibility = if (isClicked == true) {
-                View.VISIBLE
-            } else View.INVISIBLE
+            visibility = if (isClicked == true) View.VISIBLE else View.INVISIBLE
             isClicked = !isClicked
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        isClicked = false
+    }
+
+    override fun onBackPressed() {
+        if (isClicked == true) {
+            handleClick(800)
         }
     }
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.frame1 -> if (isClicked == true) {
-                handleClick(800)
-            }
             R.id.btn_paket_wisata -> handleClick(400)
             R.id.menu_title -> {
                 val dialog = BottomSheetDialog(this)
