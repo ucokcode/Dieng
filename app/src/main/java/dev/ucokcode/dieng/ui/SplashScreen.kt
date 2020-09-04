@@ -1,20 +1,16 @@
-package dev.ucokcode.dieng
+package dev.ucokcode.dieng.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import java.util.*
-import kotlin.concurrent.timerTask
+import dev.ucokcode.dieng.R
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splashscreen)
-        val intent = Intent(this, MainActivity::class.java)
 
-        Timer().schedule(timerTask {
-            startActivity(intent)
-            finish()
-        }, 2000)
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
