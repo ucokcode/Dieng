@@ -16,20 +16,28 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/mjelajah"
         style="@style/MenuItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:text="Jelajah" />
 
     <TextView
+        android:id="@+id/mtransportasi"
         style="@style/MenuItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
+
         android:text="Transportasi" />
 
     <TextView
+        android:id="@+id/mtentang"
         style="@style/MenuItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
+
         android:text="Tentang" />
 </LinearLayout>

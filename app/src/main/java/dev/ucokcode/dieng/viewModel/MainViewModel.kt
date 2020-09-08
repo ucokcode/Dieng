@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     private val _isClicked = MutableLiveData<Boolean>().apply { value = false }
+
     private val backgroundSize = Transformations.map(_isClicked) {
         return@map if (it) 400 else 800
     }

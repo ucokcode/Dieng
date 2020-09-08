@@ -1,10 +1,12 @@
 package dev.ucokcode.dieng.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -17,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private val viewModel: MainViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,12 +56,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun createButtomDialog(view: View) {
+        val mjelajah = view.findViewById<TextView>(R.id.mjelajah)
+        mjelajah.setOnClickListener(this)
+    }
+
     override fun onClick(view: View) {
         when (view.id) {
+            R.id.mjelajah -> startActivity(Intent(applicationContext,
+                Jelajah::class.java))
             R.id.btn_paket_wisata -> viewModel.setClick()
             R.id.menu_title -> {
                 val dialog = BottomSheetDialog(this)
                 val menuDialog = layoutInflater.inflate(R.layout.menu, null)
+                createButtomDialog(menuDialog)
                 with(dialog) {
                     setContentView(menuDialog)
                     show()

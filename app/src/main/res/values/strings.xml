@@ -4,4 +4,11 @@
     <string name="deskripsi_vector_gunung">Dieng, Tanah Para Dewa</string>
     <string name="paket_wisata">Paket Wisata</string>
     <string name="menu">Menu</string>
+    <string name="sejarahContentView">
+        Pada awal abad masehi, terjadilah
+        sebuah proses migrasi besar-besaran penduduk Kalinga ke
+        berbagai penjuru asia, salah satunya ke pulau jawa.
+    </string>
+    <string name="sejarah">Sejarah</string>
+    <string name="kawah_candradimuka">Kawah Candradimuka</string>
 </resources>

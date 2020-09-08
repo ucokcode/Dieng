@@ -6,7 +6,9 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
-
+    buildFeatures {
+        dataBinding true
+    }
     defaultConfig {
         applicationId "dev.ucokcode.dieng"
         minSdkVersion 22
@@ -43,6 +45,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     api 'com.google.android.material:material:1.3.0-alpha02'
-    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0-rc02'
 }
 
