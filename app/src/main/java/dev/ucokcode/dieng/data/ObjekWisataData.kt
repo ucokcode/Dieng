@@ -5,9 +5,23 @@ import dev.ucokcode.dieng.model.Wisata
 
 object ObjekWisataData {
     val listObjek: ArrayList<Wisata> by lazy {
-        var itemList = arrayListOf<Wisata>()
-        itemList.add(Wisata(1, "Kawah candradimuk", R.drawable.o_kawahcadradimuka, "blablablabla"))
-        itemList.add(Wisata(2, "Telaga Warna", R.drawable.o_telagawarna, "blablabla"))
-        itemList
+        return@lazy arrayListOf<Wisata>().apply {
+            add(
+                Wisata(
+                    id = 1,
+                    title = "Kawah candradimuk",
+                    gambar = R.drawable.o_kawahcadradimuka,
+                    content = "blablablabla"
+                )
+            )
+            add(
+                Wisata(
+                    id = 2,
+                    title = "Telaga Warna",
+                    gambar = R.drawable.o_telagawarna,
+                    content = "blablabla"
+                )
+            )
+        }
     }
 }
