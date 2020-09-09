@@ -15,11 +15,15 @@ class MainViewModel : ViewModel() {
     fun getBackgroundSize(): LiveData<Int> = backgroundSize
     fun getClick(): LiveData<Boolean> = _isClicked
 
-    fun setClick() = _isClicked.apply {
-        value = value!!.not()
+    fun setClick() {
+        _isClicked.apply {
+            value = value!!.not()
+        }
     }
 
-    fun setClick(eventValue: Boolean) = _isClicked.apply {
-        value = eventValue
+    fun setClick(eventValue: Boolean) {
+        _isClicked.apply {
+            value = eventValue
+        }
     }
 }
