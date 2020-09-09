@@ -8,8 +8,7 @@
         android:id="@+id/mbackground"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/o_kawahcadradimuka" />
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/mbackground_shadow"

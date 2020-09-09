@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -14,7 +15,7 @@ import dev.ucokcode.dieng.model.Wisata
 
 class WisataAdapter(private val list: ArrayList<Wisata>) :
     RecyclerView.Adapter<WisataAdapter.WisataViewHolder>() {
-    inner class WisataViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class WisataViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mbackground: ImageView = view.findViewById(R.id.mbackground)
         var mtitle: TextView = view.findViewById(R.id.mtitle)
     }
@@ -30,8 +31,16 @@ class WisataAdapter(private val list: ArrayList<Wisata>) :
         val item = list[position]
         Glide.with(holder.itemView.context)
             .load(item.gambar)
-            .apply(RequestOptions()).into(holder.mbackground)
+            .apply(RequestOptions())
+            .into(holder.mbackground)
         holder.mtitle.text = item.title
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                item.title,
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
     override fun getItemCount(): Int = list.size

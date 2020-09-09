@@ -13,13 +13,16 @@ class Jelajah : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jelajah)
-        list_wisata.setHasFixedSize(true)
         showList()
     }
 
     private fun showList() {
-        list_wisata.layoutManager = LinearLayoutManager(this)
         val adapter = WisataAdapter(ObjekWisataData.listObjek)
-        list_wisata.adapter = adapter
+        list_wisata.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@Jelajah)
+            this.adapter = adapter
+        }
+        jelajah_scroll.smoothScrollTo(0, 0)
     }
 }
