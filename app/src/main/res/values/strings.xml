@@ -1,8 +1,8 @@
 <!--
   ~ /**
-  ~  * Created by Harapan Pardamean on 9/11/20 12:25 AM
+  ~  * Created by Harapan Pardamean on 9/11/20 3:49 AM
   ~  * Copyright (c) 2020 . All rights reserved.
-  ~  * Last modified 9/11/20 12:24 AM
+  ~  * Last modified 9/11/20 3:46 AM
   ~  */
   -->
 
@@ -20,4 +20,5 @@
     <string name="sejarah">Sejarah</string>
     <string name="kawah_candradimuka">Kawah Candradimuka</string>
     <string name="objek_wisata_title">Objek Wisata</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

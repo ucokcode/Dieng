@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Harapan Pardamean on 9/11/20 12:25 AM
+ *  * Created by Harapan Pardamean on 9/11/20 3:49 AM
  *  * Copyright (c) 2020 . All rights reserved.
- *  * Last modified 9/11/20 12:24 AM
+ *  * Last modified 9/11/20 2:47 AM
  *
  */
 
@@ -13,15 +13,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import dev.ucokcode.dieng.R
 import dev.ucokcode.dieng.model.Wisata
+import dev.ucokcode.dieng.ui.fragment.JelajahPager
 
 
-class WisataAdapter(private val list: ArrayList<Wisata>) :
+class WisataAdapter(private val list: ArrayList<Wisata>, private val setId: (Int) -> Unit) :
     RecyclerView.Adapter<WisataAdapter.WisataViewHolder>() {
     class WisataViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mbackground: ImageView = view.findViewById(R.id.mbackground)
@@ -45,12 +47,15 @@ class WisataAdapter(private val list: ArrayList<Wisata>) :
 
         holder.mtitle.text = item.title
 
-        holder.itemView.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context,
-                item.title,
-                Toast.LENGTH_LONG
-            ).show()
+        holder.itemView.setOnClickListener { view ->
+            setId(position)
+            val activity = view!!.context as AppCompatActivity
+            val secondFragment: Fragment = JelajahPager()
+            activity.supportFragmentManager.beginTransaction().apply {
+                addToBackStack(null)
+                replace(R.id.jelajah_container, secondFragment)
+                commit()
+            }
         }
     }
 

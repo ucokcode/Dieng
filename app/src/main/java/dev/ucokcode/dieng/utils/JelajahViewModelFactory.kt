@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Harapan Pardamean on 9/11/20 12:25 AM
+ *  * Created by Harapan Pardamean on 9/11/20 3:49 AM
  *  * Copyright (c) 2020 . All rights reserved.
- *  * Last modified 9/11/20 12:24 AM
+ *  * Last modified 9/11/20 1:04 AM
  *
  */
 
@@ -21,5 +21,4 @@ class JelajahViewModelFactory(private val list: ArrayList<Wisata>) : ViewModelPr
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-
 }

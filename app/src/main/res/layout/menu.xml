@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ~ /**
-  ~  * Created by Harapan Pardamean on 9/11/20 12:25 AM
+  ~  * Created by Harapan Pardamean on 9/11/20 3:49 AM
   ~  * Copyright (c) 2020 . All rights reserved.
-  ~  * Last modified 9/11/20 12:25 AM
+  ~  * Last modified 9/11/20 12:30 AM
   ~  */
   -->
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Menu"
+        android:text="@string/menu"
         android:textSize="24sp" />
 
     <TextView
@@ -36,7 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-
         android:text="Transportasi" />
 
     <TextView
