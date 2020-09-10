@@ -6,12 +6,11 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import dev.ucokcode.dieng.model.Wisata
 
-class JelajahViewModel(list: ArrayList<Wisata>) : ViewModel() {
-    val list: ArrayList<Wisata> = list
+class JelajahViewModel(val list: ArrayList<Wisata>) : ViewModel() {
     private var _articleId = MutableLiveData<Int>()
-    private var _article = Transformations.map(_articleId, {
-        return@map list[it]
-    })
+    private var _article = Transformations.map(_articleId) {
+        list[it]
+    }
 
 
     fun setArticle(position: Int) {

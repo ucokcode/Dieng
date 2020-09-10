@@ -4,24 +4,19 @@ import dev.ucokcode.dieng.R
 import dev.ucokcode.dieng.model.Wisata
 
 object ObjekWisataData {
-    val listObjek: ArrayList<Wisata> by lazy {
-        return@lazy arrayListOf<Wisata>().apply {
-            add(
-                Wisata(
-                    id = 1,
-                    title = "Kawah candradimuk",
-                    gambar = R.drawable.o_kawahcadradimuka,
-                    content = "blablablabla"
-                )
+    val listObjek: ArrayList<Wisata> =
+        arrayListOf<Wisata>(
+            Wisata(
+                1,
+                "Kawah candradimuk",
+                R.drawable.o_kawahcadradimuka,
+                "blablablabla"
+            ), Wisata(
+                2,
+                "Telaga Warna",
+                R.drawable.o_telagawarna,
+                "blablabla"
             )
-            add(
-                Wisata(
-                    id = 2,
-                    title = "Telaga Warna",
-                    gambar = R.drawable.o_telagawarna,
-                    content = "blablabla"
-                )
-            )
-        }
-    }
+        )
 }
+
