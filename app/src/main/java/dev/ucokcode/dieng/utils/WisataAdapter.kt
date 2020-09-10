@@ -29,11 +29,14 @@ class WisataAdapter(private val list: ArrayList<Wisata>) :
 
     override fun onBindViewHolder(holder: WisataViewHolder, position: Int) {
         val item = list[position]
+
         Glide.with(holder.itemView.context)
             .load(item.gambar)
             .apply(RequestOptions())
             .into(holder.mbackground)
+
         holder.mtitle.text = item.title
+
         holder.itemView.setOnClickListener {
             Toast.makeText(
                 holder.itemView.context,

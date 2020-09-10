@@ -12,7 +12,7 @@ import dev.ucokcode.dieng.viewModel.JelajahViewModel
 import kotlinx.android.synthetic.main.activity_jelajah.*
 
 class Jelajah : AppCompatActivity() {
-    private val viewModel: JelajahViewModel by viewModels({ JelajahViewModelFactory(ObjekWisataData.list) })
+    private val viewModel: JelajahViewModel by viewModels { JelajahViewModelFactory(ObjekWisataData.list) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -17,8 +17,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-
     private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,21 +56,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun createButtomDialog(view: View) {
+    private fun createBottomDialog(view: View) {
         val mjelajah = view.findViewById<TextView>(R.id.mjelajah)
         mjelajah.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.mjelajah -> startActivity(Intent(applicationContext,
-                Jelajah::class.java))
+            R.id.mjelajah -> startActivity(
+                Intent(
+                    applicationContext,
+                    Jelajah::class.java
+                )
+            )
             R.id.btn_paket_wisata -> viewModel.setClick()
             R.id.menu_title -> {
                 val dialog = BottomSheetDialog(this)
                 val menuDialog = layoutInflater.inflate(R.layout.menu, null)
-                createButtomDialog(menuDialog)
-                with(dialog) {
+                createBottomDialog(menuDialog)
+                dialog.run {
                     setContentView(menuDialog)
                     show()
                 }

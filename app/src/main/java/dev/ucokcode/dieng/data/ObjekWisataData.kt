@@ -9,5 +9,6 @@ object ObjekWisataData {
             Wisata(1, "Kawah candradimuk", R.drawable.o_kawahcadradimuka, "blablablabla"),
             Wisata(2, "Telaga Warna", R.drawable.o_telagawarna, "blablabla")
         )
+
 }
 
