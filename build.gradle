@@ -1,14 +1,14 @@
 /*
  * *
- *  * Created by Harapan Pardamean on 9/11/20 3:49 AM
+ *  * Created by Harapan Pardamean on 9/11/20 9:38 PM
  *  * Copyright (c) 2020 . All rights reserved.
- *  * Last modified 9/11/20 12:25 AM
+ *  * Last modified 9/11/20 5:37 PM
  *
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.0"
+    ext.kotlin_version = "1.4.10"
     repositories {
         google()
         jcenter()

@@ -1,40 +1,38 @@
 /*
  * *
- *  * Created by Harapan Pardamean on 9/11/20 12:25 AM
+ *  * Created by Harapan Pardamean on 9/11/20 9:38 PM
  *  * Copyright (c) 2020 . All rights reserved.
- *  * Last modified 9/11/20 12:24 AM
+ *  * Last modified 9/11/20 3:49 AM
  *
  */
 
 package dev.ucokcode.dieng.ui
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.ViewModelProvider
 import dev.ucokcode.dieng.R
 import dev.ucokcode.dieng.data.ObjekWisataData
+import dev.ucokcode.dieng.ui.fragment.MainJelajah
 import dev.ucokcode.dieng.utils.JelajahViewModelFactory
-import dev.ucokcode.dieng.utils.WisataAdapter
-import dev.ucokcode.dieng.viewModel.JelajahViewModel
-import kotlinx.android.synthetic.main.activity_jelajah.*
 
 class Jelajah : AppCompatActivity() {
-    private val viewModel: JelajahViewModel by viewModels { JelajahViewModelFactory(ObjekWisataData.list) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jelajah)
-        showList()
+
+        val mainFragment = MainJelajah()
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.jelajah_container, mainFragment)
+            addToBackStack(null)
+            commit()
+        }
+
     }
 
-    private fun showList() {
-        val adapter = WisataAdapter(viewModel.list)
-        list_wisata.apply {
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@Jelajah)
-            this.adapter = adapter
-        }
-        jelajah_scroll.smoothScrollTo(0, 0)
+    override fun getDefaultViewModelProviderFactory(): ViewModelProvider.Factory {
+        return JelajahViewModelFactory(ObjekWisataData.list)
     }
+
 }

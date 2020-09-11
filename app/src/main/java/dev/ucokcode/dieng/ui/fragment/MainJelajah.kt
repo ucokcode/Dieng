@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Harapan Pardamean on 9/11/20 3:49 AM
+ *  * Created by Harapan Pardamean on 9/11/20 9:38 PM
  *  * Copyright (c) 2020 . All rights reserved.
- *  * Last modified 9/11/20 2:19 AM
+ *  * Last modified 9/11/20 3:25 PM
  *
  */
 
@@ -37,7 +37,6 @@ class MainJelajah : Fragment(R.layout.fragment_main_jelajah) {
     }
 
     private fun showList() {
-
         val adapter = WisataAdapter(model.list) {
             handlerClick(it)
         }
